@@ -129,3 +129,42 @@ SELECT * FROM tbl_member;
 
 
 
+
+--- 편의점 테이블
+DROP TABLE tbl_product;
+CREATE TABLE tbl_product(
+    pno NUMBER PRIMARY KEY,
+    pname VARCHAR2(100) NOT NULL UNIQUE,
+    company VARCHAR2(100) NOT NULL,
+    price NUMBER NOT NULL,
+    cnt NUMBER DEFAULT 0,
+    regdate DATE DEFAULT SYSDATE
+);
+
+DROP SEQUENCE seq_product;
+CREATE SEQUENCE seq_product
+    START WITH 1001
+    INCREMENT BY 1
+    NOCYCLE;
+    
+INSERT INTO tbl_product(pno, pname, company, price, cnt)
+VALUES(seq_product.NEXTVAL, '코카콜라', '코카콜라', 900, 5);
+INSERT INTO tbl_product(pno, pname, company, price, cnt)
+VALUES(seq_product.NEXTVAL, '스프라이트', '스프라이트', 800, 10);
+
+COMMIT;
+SELECT * FROM tbl_product;
+
+
+등록 또는 추가할 제품이름을 입력하세요
+'코카콜라' => DB
+SELECT COUNT(*) FROM tbl_product
+WHERE pname = '코카콜라';
+
+결과 > 1 => 기존에 등록된 제품 => 추가기능 작동
+결과 == 0 => 처음 입고된 제품 => 등록기능 작동
+
+
+SELECT * FROM USER_SEQUENCES;
+
+
