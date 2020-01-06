@@ -4,8 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
   <configuration>
 	<!-- DB접속정보 값을 가지고 있는 파일 설정 -->
-	
 	<properties resource = "mybatis/db.propertis"/>
+	<typeAliases>
+  	<typeAlias alias="ProductDTO" type="marcket.ProductDTO"/>
+  	<typeAlias alias="SaleDTO" type="marcket.SaleDTO"/>
+  </typeAliases>
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>  
@@ -22,5 +25,6 @@
      <mapper resource="mybatis/BoardMapper.xml"/>
       <mapper resource="mybatis/MemberMapper.xml"/>
        <mapper resource="mybatis/Product.xml"/>
+         <mapper resource="mybatis/SaleMapper.xml"/>
   </mappers>
 </configuration>

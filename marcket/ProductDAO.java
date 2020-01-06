@@ -32,21 +32,22 @@ public class ProductDAO {
 		return flag;
 		
 	}
-	
+	// 기존에 등록된 제품 수량 추가
 	public void cntPlusPdt(String pname, int cnt) {
 		sqlSession = sqlSessionFactory.openSession(true);
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("pname", pname);
 		map.put("cnt", cnt);
+		map.put("flag", "plus");
 		try {
 			System.out.println(map.get(pname));
 			System.out.println(map.get(cnt));
-			result = sqlSession.update("cntPlusPdt", map);
+			result = sqlSession.update("cntchangePdt", map);
 			
 			if(result > 0) {
-				System.out.println("▦▩▦▩ 제품을 추가 했습니다.");
+				System.out.println("▦▩▦▩ \""+pname+"\"제품의 수량을 "+ cnt +"개 추가하였습니다.");
 		  } else {
-			  System.out.println("▦▩▦▩ 제품을 추가하는데에 실패했습니다.");
+			  System.out.println("▦▩▦▩ [Msg] Error, Contact your admin.");
 		  }
 			
 		} catch (Exception e) {
@@ -55,6 +56,24 @@ public class ProductDAO {
 			sqlSession.close();
 		}
 	}
+	
+	// 상품 판매시 재고를 마이너스 하는 함수
+	public void cntminusPdt(String pname, int cnt) {
+		sqlSession = sqlSessionFactory.openSession(true);
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("pname", pname);
+		map.put("cnt", cnt);
+		map.put("flag", "minus");
+		try {
+			sqlSession.update("cntchangePdt", map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	}
+	
+	// 신규 상품 입고등록
 	public void insertPdt(ProductDTO pDto) {
 		sqlSession = sqlSessionFactory.openSession();
 		try { 
@@ -118,21 +137,54 @@ public class ProductDAO {
 	public void selectPdt() {
 		sqlSession = sqlSessionFactory.openSession();
 		try {
-			list = sqlSession.selectList("selectPdt");
+			list = sqlSession.selectList("pdt.select");
+			printList(list);
 			
-			if(result > 0) {
-				System.out.println("▦▩▦▩ 번호\t제품명\t회사\t가격\t수량");
-			}
-			for(ProductDTO line : list) {
-				System.out.println(line.toString());
-			}
-			System.out.println("현재 등록된 제품은 총" +list.size()+ "개 입니다.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
 	}
+	
+	// 출력
+	public void printList(List<ProductDTO> list) {
+		int i =1;
+		try {
+			System.out.println("▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩");
+			System.out.println("▦▩▦▩ 번호\t제품번호\t제품명\t제조사\t가격\t재고\t입고일자");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			for(ProductDTO line : list) {
+				System.out.println("▦▩▦▩ "+ i +"\t"+ line.toString());
+				i += 1;
+			}
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("현재 등록된 제품은 총" +list.size()+ "개 입니다.");
+			System.out.println("▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩▦▩");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	}
+	
+	// 제품 전체조회(재고가 > 1)
+	public List<ProductDTO> selectUsePdt() {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			list = sqlSession.selectList("pdt.selectUsePdt");
+			printList(list);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
+
+
+
 	public void searchPdt() {}
 	
 	

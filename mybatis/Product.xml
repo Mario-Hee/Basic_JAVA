@@ -5,9 +5,14 @@
 	SELECT COUNT(*) FROM tbl_product
 	WHERE pname = #{pname}
 	</select>
-	<update id="cntPlusPdt" parameterType ="marcket.ProductDTO">
-	UPDATE tbl_product
-	SET cnt = cnt + #{cnt}
+	<update id="cntchangePdt" parameterType ="marcket.ProductDTO">
+	UPDATE tbl_product SET
+	<if test ="flag == 'plus'">
+		cnt = cnt + #{cnt}
+	</if>
+	<if test ="flag == 'minus'">
+		cnt = cnt - #{cnt}
+	</if>
 	WHERE pname = #{pname}
 	</update>
 	<insert id="insertPdt" parameterType ="marcket.ProductDTO">
@@ -25,5 +30,9 @@
 	</delete>
 	<select id="selectPdt" resultType = "marcket.ProductDTO">
 	SELECT * FROM tbl_product
+	</select>
+	<select id = "selectUsePdt" resultType = "marcket.ProductDTO">
+	SELECT * FROM tbl_product
+	WHERE cnt >= 1
 	</select>
 </mapper>
