@@ -283,4 +283,114 @@ FROM tbl_sale
 WHERE TO_CHAR(regdate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD');
 GROUP BY sname;
 
+-- 다음 영화 평점을 담기 위한 테이블 생성
+DROP TABLE tbl_movie;
+CREATE TABLE tbl_movie(
+    mno NUMBER PRIMARY KEY,
+    title VARCHAR2(500) NOT NULL,
+    content VARCHAR2(2000),
+    writer VARCHAR2(200) NOT NULL,
+    score NUMBER DEFAULT 0,
+    loc VARCHAR2(100),
+    regdate NUMBER
+);
 
+DROP SEQUENCE seq_movie;
+CREATE SEQUENCE seq_movie
+    START WITH 1
+    INCREMENT BY 1
+    NOCYCLE;
+
+SELECT * FROM tbl_movie;    
+ORDER BY mno DESC;
+
+--회원 테이블
+DROP TABLE tbl_member;
+CREATE TABLE tbl_member(
+    id VARCHAR2(100) PRIMARY KEY,
+    pw VARCHAR2(200) NOT NULL,
+    name VARCHAR2(100) NOT NULL,
+    phone VARCHAR2(50) NOT NULL,
+    email VARCHAR2(100) NOT NULL,
+    postcode VARCHAR2(30) NOT NULL,
+    addr1 VARCHAR2(300) NOT NULL,
+    addr2 VARCHAR2(300) NOT NULL,
+    useon VARCHAR2(20) NOT NULL,
+    primaryon VARCHAR2(20) NOT NULL,
+    locon VARCHAR2(20) DEFAULT 'false',
+    eventon VARCHAR2(20) DEFAULT 'false',
+    useyn VARCHAR2(200) DEFAULT 'n',
+    regdate DATE DEFAULT SYSDATE
+);
+
+INSERT INTO tbl_member(id, pw, name, phone, email, postcode, addr1, addr2, useon, primaryon)
+VALUES('admin', '1234', '관리자', '01012345678', 'admin@gmail.com', '12345', '광주광역시', '광산구', 'true', 'true');
+INSERT INTO tbl_member(id, pw, name, phone, email, postcode, addr1, addr2, useon, primaryon)
+VALUES('mario', '5678', '관리자', '01011112222', 'mario@gmail.com', '54321', '광주광역시', '광산구', 'true', 'true');
+COMMIT;
+
+SELECT * FROM tbl_member;
+
+SELECT COUNT(*) FROM tbl_member WHERE id = 'admin';
+show USER;
+
+--자유게시판
+--QnA게시판
+--고객게시판
+--공지사항
+--tbl_board 통합형 게시판
+--type: free, qna, cs, notic
+
+--게시판 Sequence 생성
+DROP SEQUENCE seq_board;
+CREATE SEQUENCE seq_board
+    START WITH 1
+    INCREMENT BY 1
+    NOCYCLE;
+    
+--게시판 Table 생성
+DROP TABLE tbl_board CASCADE CONSTRAINTS;
+CREATE TABLE tbl_board(
+    bno number(10, 0),
+    type CHAR(4) NOT NULL,
+    title VARCHAR2(200) NOT NULL,
+    content VARCHAR2(4000) NOT NULL,
+    writer  VARCHAR2(50) NOT NULL,
+    viewcnt NUMBER DEFAULT 0,
+    replycnt NUMBER DEFAULT 0,
+    goodcnt NUMBER DEFAULT 0,
+    regdatre DATE DEFAULT SYSDATE,
+    updatedate DATE DEFAULT SYSDATE,
+    show CHAR(1) DEFAULT 'y',
+    ref NUMBER NOT NULL,
+    re_step NUMBER NOT NULL,
+    re_level NUMBER NOT NULL
+);
+
+SELECT * FROM tbl_board;
+
+--게시판 테이블 PK key추가
+ALTER TABLE tbl_board ADD CONSTRAINT pk_board
+PRIMARY KEY(bno);
+
+--게시물 총 15건 추가! ref=1, re_step=1, re_level=0 type=free
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '고양이', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글2', '게시글2', '강아지', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글3', '게시글3', '코끼리', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글4', '게시글4', '호랑이', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글5', '게시글5', '다람쥐', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글6', '게시글6', '얼룩말', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글7', '게시글7', '타조', '1', '1', '0');
+INSERT INTO tbl_.oard(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board_NEXTVAL, 'free', '테스트 게시글8', '게시글8', '하마', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글9', '게시글9', '기린', '1', '1', '0');
+INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글10', '게시글10', '사자', '1', '1', '0');
