@@ -362,9 +362,9 @@ CREATE TABLE tbl_board(
     regdatre DATE DEFAULT SYSDATE,
     updatedate DATE DEFAULT SYSDATE,
     show CHAR(1) DEFAULT 'y',
-    ref NUMBER NOT NULL,
-    re_step NUMBER NOT NULL,
-    re_level NUMBER NOT NULL
+    ref NUMBER DEFAUL 1,
+    re_step NUMBER DEFAULT 1,
+    re_level NUMBER DEFAULT 0
 );
 
 SELECT * FROM tbl_board;
@@ -537,3 +537,59 @@ INSERT INTO tbl_board(bno, type, title, content, writer, ref, re_step, re_level)
     
 COMMIT;
 
+-- 댓글 테이블 생성
+DROP SEQUENCE seq_reply;
+CREATE SEQUENCE seq_reply
+    START WITH 1
+    INCREMENT BY 1
+    NOCYCLE;
+    
+DROP TABLE tbl_reply;
+CREATE TABLE tbl_reply(
+    rno NUMBER,
+    type CHAR(4) NOT NULL,
+    content VARCHAR2(2000) NOT NULL,
+    writer VARCHAR2(100) NOT NULL,
+    regdate DATE DEFAULT SYSDATE,
+    bno NUMBER NOT NULL
+);
+
+--공통 PK KEY
+--다름 제약조건 이름name이 달라진다
+
+--tbl_reply에 PK 제약조건 추가
+ALTER TABLE tbl_reply ADD CONSTRAINT pk_reply
+PRIMARY KEY(rno);
+
+--댓글 FK 게시글과 참조, 게시글 삭제시 참조하고 있는 댓글 연쇄 삭제를 위한 cascade 설정
+
+ALTER TABLE tbl_reply
+ADD CONSTRAINT fk_reply_bno
+FOREIGN KEY(bno) REFERENCES tbl_board(bno)
+ON DELETE CASCADE;
+
+
+SELECT * FROM tbl_reply;
+
+SELECT * FROM tbl_board;
+
+
+--상위 게시글 3건에다가 2건~3건 댓글
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '댓글이다', '강아지', '210');
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '괜찮네요', '고양이', '210');
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '무지개시티에 가요', '알파카', '210');
+
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '추천해요', '고양이', '210');
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '아주 좋아요', '라마', '210');
+
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '좋아요좋아요', '사자', '210');
+INSERT INTO tbl_reply(rno, type, content, writer, bno)
+VALUES(seq_reply.NEXTVAL, 'free', '최고야', '호랑이', '210');
+
+COMMIT;
