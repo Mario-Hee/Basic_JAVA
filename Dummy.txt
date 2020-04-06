@@ -515,6 +515,139 @@ INSERT INTO tbl_board(bno, type, title, content, writer)
 VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
 INSERT INTO tbl_board(bno, type, title, content, writer)
 VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+INSERT INTO tbl_board(bno, type, title, content, writer)
+VALUES(seq_board.NEXTVAL, 'free', '테스트 게시글1', '게시글1', '왕콘치');
+
 
     
 COMMIT;
