@@ -721,7 +721,7 @@ CREATE TABLE tbl_attach (
 ALTER TABLE tbl_attach ADD CONSTRAINT pk_attach
 PRIMARY KEY(fullname);
 
-ALTER TABLE tbl_attack
+ALTER TABLE tbl_attach
 ADD CONSTRAINT fk_attach_bno
 FOREIGN KEY(bno) REFERENCES tbl_board(bno)
 ON DELETE CASCADE;
